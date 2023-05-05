@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8ld24wyye6qk"]
+
+[ext_resource type="VideoStream" path="res://assets/valveprizz.ogv" id="1_yf0it"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_ypc8f"]
+[ext_resource type="Script" path="res://scripts/VideoStreamPlayer.gd" id="3_681nj"]
+
+[node name="Camera2D" type="Camera2D"]
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("1_ypc8f")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
+layout_mode = 2
+offset_left = -614.0
+offset_top = -329.0
+offset_right = 614.0
+offset_bottom = 329.0
+size_flags_horizontal = 4
+stream = ExtResource("1_yf0it")
+autoplay = true
+expand = true
+script = ExtResource("3_681nj")
